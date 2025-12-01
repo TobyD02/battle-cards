@@ -1,0 +1,18 @@
+services:
+  card-generator-service:
+    build: ./
+    environment:
+      OLLAMA_URL: http://host.docker.internal:11434
+      DB_PATH: /data/app.db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "80:8000"
+    volumes:
+      - ./:/app
+      - images:/images
+      - db:/data
+
+volumes:
+  images:
+  db:
