@@ -1,7 +1,7 @@
 from typing import Sequence
 
 from sqlalchemy import create_engine
-from sqlmodel import SQLModel, Session, select
+from sqlmodel import SQLModel, Session, select, func
 
 from src.entity.card_model import CardModel
 
@@ -26,3 +26,9 @@ class DatabaseService:
         with Session(self.engine) as session:
             statement = select(CardModel)
             return session.exec(statement).all()
+
+
+    def get_all_cards_count(self) -> int:
+        with Session(self.engine) as session:
+            statement = select(func.count()).select_from(CardModel)
+            return session.exec(statement).one()

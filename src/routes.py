@@ -95,3 +95,9 @@ def register_routes(app: FastAPI) -> None:
         database_service = database_service_factory()
         results = database_service.get_all_cards()
         return results
+
+    @app.get("/cards/count")
+    async def index3():
+        database_service = database_service_factory()
+        result = database_service.get_all_cards_count()
+        return {"count": result}
