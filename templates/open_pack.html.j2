@@ -8,20 +8,11 @@
     <link rel="stylesheet" href="/static/card-negative.css">
     <link rel="stylesheet" href="/static/card-gold.css">
 </head>
-
 <body>
-{% if card_base is not none %}
-<div style="display: grid;grid-template-columns: auto auto auto auto; gap: 50px;">
+<div style="display: grid; grid-template-columns: auto auto auto auto auto; gap: 25px;">
     {% for card in cards %}
-    {% include "card.partial.html.j2"%}
+        {% include "card.partial.html.j2" %}
     {% endfor %}
 </div>
-{% else %}
-<div>
-    <h2 style="color: white">Card has not been generated yet :/</h2>
-</div>
-{% endif %}
-
-
 </body>
 </html>

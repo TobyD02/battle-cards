@@ -1,6 +1,8 @@
 <div>
 <div class="card {{ "card-holo" if card.holo else "card-regular" }} {{ "card-negative" if card.negative else ""}} {{ "card-gold" if card.gold else ""}}">
-    <img class="card-image" src="{{ card.image_url }}" alt="{{ card.name }}">
+    <div class="card-image-outer">
+        <img class="card-image" src="{{ card.image_url }}" alt="{{ card.name }}">
+    </div>
     {% if card.holo %}
         <div class="card-holo-overlay"></div>
     {% endif %}

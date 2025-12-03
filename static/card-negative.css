@@ -8,6 +8,9 @@
     box-shadow: 0px 0px 20px 1px var(--glow-color-negative);
 }
 
+.card-negative .card-info-stats {
+    color: var(--font-color-negative);
+}
 
 .card-negative.card-holo .card-info-name {
     text-shadow: 0 0 10px var(--glow-color-negative);
@@ -20,13 +23,28 @@
 
 .card-negative .card-image {
     box-sizing: border-box;
+    background: var(--image-bg-negative);
     filter: saturate(0%) invert(100%);
 }
 
+
+.card-negative .card-image-outer {
+    background: transparent;
+}
+
 .card-negative .card-info {
-    background: rgba(60, 60, 60, 0.4);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--font-color-negative);
+    /*backdrop-filter: blur(15px);*/
     /*filter: invert(100%);*/
+}
+
+.card-negative .card-info-description {
+    color: var(--font-color-negative)
+}
+
+.card-negative .card-info-stats strong {
+    color: var(--font-color-negative);
 }
 
 .card-negative.card-holo .card-info-stats strong {

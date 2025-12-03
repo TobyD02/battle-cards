@@ -1,9 +1,7 @@
-from sqlmodel import SQLModel
+from sqlmodel import SQLModel, Field
 
-
-class CardModel(SQLModel):
-    id: int
-    base_card_id: int
+class CardBaseModel(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
     label: str
     name: str
     strength: int
@@ -14,6 +12,4 @@ class CardModel(SQLModel):
     constitution: int
     description: str
     image_url: str
-    holo: bool
-    negative: bool
-    gold: bool
+    wiki_url: str

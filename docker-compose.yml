@@ -1,6 +1,7 @@
 services:
   card-generator-service:
     build: ./
+    container_name: card-generator-service
     environment:
       OLLAMA_URL: http://host.docker.internal:11434
       DB_PATH: /data/app.db
