@@ -11,6 +11,8 @@
     - Also - gives synonyms for characters. if someone searches for a new character and it returns same url, then can add that to the db as another reference to the same character.
 - [ ] Work out which order CSS classes must be applied in, in order for them to be compatible
   - Subsequently, come up with a way of determining when a card should be holo, negative, gold, etc...
+- [ ] On searching, check string similarity between search term and resultant page
+  - Should only result in a card if there is similarity
 
 ### Prerequisites 
 - Ollama running somwhere (ideally locally), using gemma3:4b

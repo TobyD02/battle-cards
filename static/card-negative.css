@@ -20,7 +20,7 @@
 
 .card-negative .card-image {
     box-sizing: border-box;
-    filter: invert(100%);
+    filter: saturate(0%) invert(100%);
 }
 
 .card-negative .card-info {
