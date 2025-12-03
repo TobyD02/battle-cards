@@ -9,6 +9,9 @@ class CardModel(SQLModel, table=True):
     wisdom: int
     intelligence: int
     charisma: int
+    constitution: int
     description: str
+    aggregate_stats: int
     image_url: str
     wiki_url: str
+    holo: bool

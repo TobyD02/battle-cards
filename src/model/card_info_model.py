@@ -8,6 +8,7 @@ class CardInfoModel(BaseModel):
     wisdom: int
     intelligence: int
     charisma: int
+    constitution: int
 
     description: str
 

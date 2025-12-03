@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/card-base.css">
+    <link rel="stylesheet" href="/static/card-holo.css">
+    <link rel="stylesheet" href="/static/card-negative.css">
+    <link rel="stylesheet" href="/static/card-gold.css">
+</head>
+
+<body>
+{% if card_base is not none %}
+<div style="display: grid;grid-template-columns: auto auto auto auto; gap: 50px;">
+    {% set card = card_base %}
+    {% include "card.partial.html.j2"%}
+
+    {% set card = card_negative %}
+    {% include "card.partial.html.j2"%}
+
+    {% set card = card_gold %}
+    {% include "card.partial.html.j2"%}
+
+    {% set card = card_negative_gold %}
+    {% include "card.partial.html.j2"%}
+
+</div>
+{% else %}
+<div>
+    <h2>Card has not been generated yet :/</h2>
+</div>
+{% endif %}
+
+
+</body>
+</html>

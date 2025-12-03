@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 T = TypeVar("T", bound=BaseModel)
 
-class CardGeneratorService:
+class LlmService:
     def __init__(self):
         session = requests.Session()
         session.timeout = 2

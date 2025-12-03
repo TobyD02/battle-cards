@@ -1,0 +1,24 @@
+<div>
+<div class="card {{ "card-holo" if card.holo else "card-regular" }} {{ "card-negative" if card.negative else ""}} {{ "card-gold" if card.gold else ""}}">
+    <img class="card-image" src="{{ card.image_url }}" alt="{{ card.name }}">
+    {% if card.holo %}
+        <div class="card-holo-overlay"></div>
+    {% endif %}
+    <div class="card-info">
+        <div class="card-info-name">{{ card.name }}</div>
+
+        <div class="card-info-stats">
+            <div><strong>STR:</strong> {{ card.strength }}</div>
+            <div><strong>DEX:</strong> {{ card.dexterity }}</div>
+            <div><strong>WIS:</strong> {{ card.wisdom }}</div>
+            <div><strong>INT:</strong> {{ card.intelligence }}</div>
+            <div><strong>CHA:</strong> {{ card.charisma }}</div>
+            <div><strong>CON:</strong> {{ card.constitution }}</div>
+        </div>
+
+        <div class="card-info-description">
+            {{ card.description }}
+        </div>
+    </div>
+</div>
+</div>
