@@ -1,0 +1,87 @@
+.card-negative {
+    /* 1. Anchoring */
+    position: relative;
+    z-index: 10; /* Ensures the border stays attached to the card, not the page body */
+}
+
+.card-negative.card-holo {
+    box-shadow: 0px 0px 20px 1px var(--glow-color-negative);
+}
+
+
+.card-negative.card-holo .card-info-name {
+    text-shadow: 0 0 5px var(--glow-color-negative);
+}
+
+.card-negative.card-holo .card-info {
+    border-top: 2px solid var(--glow-color-negative);
+}
+
+
+.card-negative .card-image {
+    box-sizing: border-box;
+    filter: invert(100%);
+}
+
+.card-negative .card-info {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    /*filter: invert(100%);*/
+}
+
+.card-negative .card-info-stats, .card-negative .card-info-description {
+    color: #333;
+    filter: invert(100%);
+}
+
+/* The Spinning "Snake" Layer */
+.card-negative::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+
+    /* Make the spinner large enough to cover the corners as it rotates */
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+
+    background-repeat: no-repeat;
+    /* This creates the "Pixel with a tail" look */
+    background-image: conic-gradient(transparent, transparent, transparent, #777);
+
+    animation: borderRotate 4s linear infinite;
+}
+
+/* The Mask Layer (Creates the hollow center) */
+.card-negative::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+
+    /* THICKNESS: Adjust this to make the border thicker/thinner */
+    inset: 1px;
+
+    /* SHAPE: Inherit the rounded corners from your main class */
+    border-radius: inherit;
+
+    /* COLOR: This MUST match your card's background color */
+    background: #1e1e1e;
+}
+
+@keyframes borderRotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hueShift {
+    0% { filter: invert(-150deg) }
+    100% { filter: invert(150deg) }
+}
+
+@keyframes borderPulseNegative {
+    0% { box-shadow: 0 0 0 2px transparent, 0 0 8px 3px rgba(155, 0, 37, 0.3); }
+    50% { box-shadow: 0 0 0 2px transparent, 0 0 15px 5px rgba(155, 0, 37, 0.8); }
+    100% { box-shadow: 0 0 0 2px transparent, 0 0 8px 3px rgba(155, 0, 37, 0.3); }
+}

@@ -3,59 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/card.css">
+    <link rel="stylesheet" href="/static/card-base.css">
+    <link rel="stylesheet" href="/static/card-holo.css">
+    <link rel="stylesheet" href="/static/card-negative.css">
+    <link rel="stylesheet" href="/static/card-gold.css">
     <title>{{ card_model.name }} - Holo Rare</title>
 
 </head>
 
 <body>
 
-<div style="display: grid;grid-template-columns: auto auto auto; gap: 10px;">
+<div style="display: grid;grid-template-columns: auto auto auto auto; gap: 50px;">
+    <div>
+        <h1 style="color: white">Regular</h1>
+        <div class="card card-regular">
+            <img class="card-image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
 
+            <div class="card-holo-overlay"></div>
 
-    <div class="card card--holo">
-        <img class="card__image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
+            <div class="card-info">
+                <div class="card-info-name">{{ card_model.name }}</div>
 
-        <div class="card__holo-overlay"></div>
+                <div class="card-info-stats">
+                    <div><strong>STR:</strong> {{ card_model.strength }}</div>
+                    <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
+                    <div><strong>WIS:</strong> {{ card_model.wisdom }}</div>
+                    <div><strong>INT:</strong> {{ card_model.intelligence }}</div>
+                    <div><strong>CHA:</strong> {{ card_model.charisma }}</div>
+                </div>
 
-        <div class="card__info">
-            <div class="card__info-name">{{ card_model.name }}</div>
-
-            <div class="card__info-stats">
-                <div><strong>STR:</strong> {{ card_model.strength }}</div>
-                <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
-                <div><strong>WIS:</strong> {{ card_model.wisdom}}</div>
-                <div><strong>INT:</strong> {{ card_model.intelligence}}</div>
-                <div><strong>CHA:</strong> {{ card_model.charisma}}</div>
+                <div class="card-info-description">
+                    {{ card_model.description }}
+                </div>
             </div>
+        </div>
+    </div>
 
-            <div class="card__info-description">
-                {{ card_model.description }}
+    <div>
+
+        <h1 style="color: white">Holo</h1>
+        <div class="card card-holo">
+            <img class="card-image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
+
+            <div class="card-holo-overlay"></div>
+
+            <div class="card-info">
+                <div class="card-info-name">{{ card_model.name }}</div>
+
+                <div class="card-info-stats">
+                    <div><strong>STR:</strong> {{ card_model.strength }}</div>
+                    <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
+                    <div><strong>WIS:</strong> {{ card_model.wisdom }}</div>
+                    <div><strong>INT:</strong> {{ card_model.intelligence }}</div>
+                    <div><strong>CHA:</strong> {{ card_model.charisma }}</div>
+                </div>
+
+                <div class="card-info-description">
+                    {{ card_model.description }}
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="card card--regular">
-        <img class="card__image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
+    <div>
+        <h1 style="color: white">Negative</h1>
+        <div class="card card-negative card-regular">
+            <img class="card-image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
 
-        <div class="card__holo-overlay"></div> <div class="card__info">
-        <div class="card__info">
-            <div class="card__info-name">{{ card_model.name }}</div>
+            <div class="card-holo-overlay"></div>
 
-            <div class="card__info-stats">
-                <div><strong>STR:</strong> {{ card_model.strength }}</div>
-                <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
-                <div><strong>WIS:</strong> {{ card_model.wisdom}}</div>
-                <div><strong>INT:</strong> {{ card_model.intelligence}}</div>
-                <div><strong>CHA:</strong> {{ card_model.charisma}}</div>
-            </div>
+            <div class="card-info">
+                <div class="card-info-name">{{ card_model.name }}</div>
 
-            <div class="card__info-description">
-                {{ card_model.description }}
+                <div class="card-info-stats">
+                    <div><strong>STR:</strong> {{ card_model.strength }}</div>
+                    <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
+                    <div><strong>WIS:</strong> {{ card_model.wisdom }}</div>
+                    <div><strong>INT:</strong> {{ card_model.intelligence }}</div>
+                    <div><strong>CHA:</strong> {{ card_model.charisma }}</div>
+                </div>
+
+                <div class="card-info-description">
+                    {{ card_model.description }}
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <div>
+        <h1 style="color: white">Holo Negative</h1>
+        <div class="card card-holo card-negative">
+            <img class="card-image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
+
+            <div class="card-holo-overlay"></div>
+
+            <div class="card-info">
+                <div class="card-info-name">{{ card_model.name }}</div>
+
+                <div class="card-info-stats">
+                    <div><strong>STR:</strong> {{ card_model.strength }}</div>
+                    <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
+                    <div><strong>WIS:</strong> {{ card_model.wisdom }}</div>
+                    <div><strong>INT:</strong> {{ card_model.intelligence }}</div>
+                    <div><strong>CHA:</strong> {{ card_model.charisma }}</div>
+                </div>
+
+                <div class="card-info-description">
+                    {{ card_model.description }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{#    #}
+
+    <div>
+        <h1 style="color: white">Regular Golden</h1>
+        <div class="card card-regular card-gold">
+            <img class="card-image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
+
+            <div class="card-holo-overlay"></div>
+
+            <div class="card-info">
+                <div class="card-info-name">{{ card_model.name }}</div>
+
+                <div class="card-info-stats">
+                    <div><strong>STR:</strong> {{ card_model.strength }}</div>
+                    <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
+                    <div><strong>WIS:</strong> {{ card_model.wisdom }}</div>
+                    <div><strong>INT:</strong> {{ card_model.intelligence }}</div>
+                    <div><strong>CHA:</strong> {{ card_model.charisma }}</div>
+                </div>
+
+                <div class="card-info-description">
+                    {{ card_model.description }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+
+        <h1 style="color: white">Holo Golden</h1>
+        <div class="card card-holo card-gold">
+            <img class="card-image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
+
+            <div class="card-holo-overlay"></div>
+
+            <div class="card-info">
+                <div class="card-info-name">{{ card_model.name }}</div>
+
+                <div class="card-info-stats">
+                    <div><strong>STR:</strong> {{ card_model.strength }}</div>
+                    <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
+                    <div><strong>WIS:</strong> {{ card_model.wisdom }}</div>
+                    <div><strong>INT:</strong> {{ card_model.intelligence }}</div>
+                    <div><strong>CHA:</strong> {{ card_model.charisma }}</div>
+                </div>
+
+                <div class="card-info-description">
+                    {{ card_model.description }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 style="color: white">Negative Golden</h1>
+        <div class="card card-negative card-regular card-gold">
+            <img class="card-image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
+
+            <div class="card-holo-overlay"></div>
+
+            <div class="card-info">
+                <div class="card-info-name">{{ card_model.name }}</div>
+
+                <div class="card-info-stats">
+                    <div><strong>STR:</strong> {{ card_model.strength }}</div>
+                    <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
+                    <div><strong>WIS:</strong> {{ card_model.wisdom }}</div>
+                    <div><strong>INT:</strong> {{ card_model.intelligence }}</div>
+                    <div><strong>CHA:</strong> {{ card_model.charisma }}</div>
+                </div>
+
+                <div class="card-info-description">
+                    {{ card_model.description }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 style="color: white">Holo Negative Golden</h1>
+        <div class="card card-holo card-negative card-gold">
+            <img class="card-image" src="{{ card_model.image_url }}" alt="{{ card_model.name }}">
+
+            <div class="card-holo-overlay"></div>
+
+            <div class="card-info">
+                <div class="card-info-name">{{ card_model.name }}</div>
+
+                <div class="card-info-stats">
+                    <div><strong>STR:</strong> {{ card_model.strength }}</div>
+                    <div><strong>DEX:</strong> {{ card_model.dexterity }}</div>
+                    <div><strong>WIS:</strong> {{ card_model.wisdom }}</div>
+                    <div><strong>INT:</strong> {{ card_model.intelligence }}</div>
+                    <div><strong>CHA:</strong> {{ card_model.charisma }}</div>
+                </div>
+
+                <div class="card-info-description">
+                    {{ card_model.description }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

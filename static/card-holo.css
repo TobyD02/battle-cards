@@ -1,0 +1,112 @@
+
+/* ================================================= */
+/* 🚀 HOLO CARD SPECIFIC STYLES (card-holo) */
+/* ================================================= */
+
+/* Applies Holo-related backgrounds and animations */
+.card-holo {
+    /* Animated Card Background */
+    background-image: radial-gradient(circle at 100% 100%, #1f1f1f 1px, transparent 1px),
+                      radial-gradient(circle at 0% 0%, #1f1f1f 1px, transparent 1px);
+    background-size: 160px 160px, 160px 160px;
+    animation: backgroundShift 15s linear infinite alternate;
+    box-shadow: 0px 0px 20px 1px var(--glow-color);
+}
+
+/* Adds the pulsing border glow to the image */
+.card-holo .card-image {
+    box-shadow: 0 0 0 2px transparent,
+        0 0 10px 2px var(--glow-color);
+    filter: saturate(200%) contrast(80%) hue-rotate(0deg);
+
+    animation: borderPulse var(--holo-speed) ease-in-out infinite alternate,
+        hueShift var(--holo-speed) infinite alternate;
+}
+
+/* Adds the glow to the info text and info bar */
+.card-holo .card-info-name {
+     text-shadow: 0 0 5px var(--glow-color);
+}
+.card-holo .card-info {
+     border-top: 2px solid var(--glow-color);
+}
+
+/* 3. HOLO FOIL LAYER (.card-holo-overlay) */
+.card-holo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0.3;
+
+    background: linear-gradient(
+            105deg,
+            rgba(90, 0, 140, 0.5) 0%,      /* deep purple */
+            rgba(140, 0, 200, 0.5) 17%,    /* magenta-violet */
+            rgba(180, 0, 255, 0.5) 34%,    /* bright nebula purple */
+            rgba(70, 120, 255, 0.5) 51%,   /* electric blue */
+            rgba(40, 180, 255, 0.5) 68%,   /* plasma blue */
+            rgba(120, 50, 200, 0.5) 85%,   /* returning to violet */
+            rgba(90, 0, 140, 0.5) 100%     /* deep purple */
+    );
+
+    /*background: linear-gradient(*/
+    /*        105deg,*/
+    /*        transparent 90%,*/
+    /*        rgba(70, 34, 34, 0.9) 31%,*/
+    /*        rgba(70, 52, 20, 0.9) 40%,*/
+    /*        rgba(83, 70, 20, 0.9) 50%,*/
+    /*        rgba(46, 70, 62, 0.9) 60%,*/
+    /*        rgba(35, 63, 70, 0.9) 70%,*/
+    /*        rgba(45, 48, 70, 0.9) 80%,*/
+    /*        transparent 90%*/
+    /*);*/
+
+    mix-blend-mode: difference;
+    background-size: 500% 500%;
+
+    filter: saturate(260%) contrast(250%) blur(15px);
+    transform: scale(3);
+    transform-origin: top left;
+
+    animation: holoSheen var(--holo-speed) linear infinite alternate-reverse;
+}
+
+/* 🛑 REGULAR CARD SPECIFIC STYLES (card-regular) */
+/* This ensures the holo-specific elements are hidden if the card is regular */
+.card-regular .card-holo-overlay {
+    display: none;
+}
+
+/* ================================================= */
+/* ANIMATIONS (Placed at the bottom) */
+/* ================================================= */
+
+@keyframes holoSheen {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; } /* Seamless loop adjustment */
+}
+
+@keyframes backgroundShift {
+    0% { background-position: 0 0; }
+    100% { background-position: 160px 160px; }
+}
+
+@keyframes borderPulse {
+    0% { box-shadow: 0 0 0 2px transparent, 0 0 8px 3px rgba(100, 255, 218, 0.3); }
+    50% { box-shadow: 0 0 0 2px transparent, 0 0 15px 5px rgba(100, 255, 218, 0.8); }
+    100% { box-shadow: 0 0 0 2px transparent, 0 0 8px 3px rgba(100, 255, 218, 0.3); }
+}
+
+@keyframes hueShift {
+    0% { filter: invert(-250deg) }
+    100% { filter: invert(250deg) }
+}
+
+@keyframes borderPulseNegative {
+    0% { box-shadow: 0 0 0 2px transparent, 0 0 8px 3px rgba(155, 0, 37, 0.3); }
+    50% { box-shadow: 0 0 0 2px transparent, 0 0 15px 5px rgba(155, 0, 37, 0.8); }
+    100% { box-shadow: 0 0 0 2px transparent, 0 0 8px 3px rgba(155, 0, 37, 0.3); }
+}
