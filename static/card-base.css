@@ -2,8 +2,8 @@
 :root {
     --card-width: 320px;
     --card-height: 480px;
-    --glow-color: #64ffda;
-    --glow-color-negative: #d10138;
+    --glow-color: #9bffc3;
+    --glow-color-negative: #230684;
     --font-color: #ddd;
     --holo-speed: 6s;
     --gold-color: #e8d290;
@@ -68,10 +68,8 @@ body {
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: linear-gradient(to right, #fff, #ccc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
+
 /* ... (Rest of stat/description styles follow this BEM pattern, e.g., .card-info-stats) ... */
 .card-info-stats {
     display: grid;
@@ -82,7 +80,7 @@ body {
     color: var(--font-color);
 }
 .card-info-stats strong {
-    color: var(--glow-color); /* Color set in the holo section */
+    color: white; /* Color set in the holo section */
 }
 .card-info-description {
     font-size: 0.8rem;

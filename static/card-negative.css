@@ -10,7 +10,7 @@
 
 
 .card-negative.card-holo .card-info-name {
-    text-shadow: 0 0 5px var(--glow-color-negative);
+    text-shadow: 0 0 10px var(--glow-color-negative);
 }
 
 .card-negative.card-holo .card-info {
@@ -24,14 +24,13 @@
 }
 
 .card-negative .card-info {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(60, 60, 60, 0.4);
     backdrop-filter: blur(15px);
     /*filter: invert(100%);*/
 }
 
-.card-negative .card-info-stats, .card-negative .card-info-description {
-    color: #333;
-    filter: invert(100%);
+.card-negative.card-holo .card-info-stats strong {
+    color: var(--glow-color-negative); /* Color set in the holo section */
 }
 
 /* The Spinning "Snake" Layer */

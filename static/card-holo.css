@@ -25,10 +25,14 @@
 
 /* Adds the glow to the info text and info bar */
 .card-holo .card-info-name {
-     text-shadow: 0 0 5px var(--glow-color);
+    text-shadow: 0 0 10px var(--glow-color);
 }
 .card-holo .card-info {
      border-top: 2px solid var(--glow-color);
+}
+
+.card-holo .card-info-stats strong {
+    color: var(--glow-color); /* Color set in the holo section */
 }
 
 /* 3. HOLO FOIL LAYER (.card-holo-overlay) */
