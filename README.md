@@ -10,6 +10,7 @@
     - Also - store database page url, so same searches that reveal same page don't do same card
     - Also - gives synonyms for characters. if someone searches for a new character and it returns same url, then can add that to the db as another reference to the same character.
 - [ ] I have an endpoint for opening packs - to make it fun:
+  - SEARCHBAR!!! - generating via path param needs to go.
   - Mark unqiue card ID's - these can be added to some counter for the player
     - If a player already has that card, then it is a duplicate and can be sold etc...
     - I think generating cards should be able to be done with any label - but api endpoints should use the card ID / base card ID?
